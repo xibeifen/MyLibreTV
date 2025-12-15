@@ -163,6 +163,8 @@ async function handleApiRequest(url) {
                                 // 返回URL部分(通常是第二部分，如果有的话)
                                 return parts.length > 1 ? parts[1] : '';
                             }).filter(url => url && (url.startsWith('http://') || url.startsWith('https://')));
+
+                            break;
                         }
                     }
                 }
