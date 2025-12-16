@@ -111,3 +111,7 @@ LibreTV 仅作为视频搜索工具，不存储、上传或分发任何视频内
 - **[Sharon](https://sharon.io)**
 - **[ZMTO](https://zmto.com)**
 - **[YXVM](https://yxvm.com)**  
+
+## 备注
+
+Vercel登录账号：github账号
