@@ -6,6 +6,10 @@ const CUSTOMER_SITES = {
     jisu: {
         api: 'https://jszyapi.com/api.php/provide/vod/from/jsm3u8/at/json',
         name: '极速'
+    },
+    hongniu: {
+        api: 'https://www.hongniuzy2.com/api.php/provide/vod/from/hnm3u8/at/josn',
+        name: '红牛'
     }
 };
 
