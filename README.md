@@ -1,29 +1,10 @@
 # LibreTV - 免费在线视频搜索与观看平台
 
-<div align="center">
-  <img src="image/logo.png" alt="LibreTV Logo" width="120">
-  <br>
-  <p><strong>自由观影，畅享精彩</strong></p>
-</div>
-
 ## 📺 项目简介
 
 LibreTV 是一个轻量级、免费的在线视频搜索与观看平台，提供来自多个视频源的内容搜索与播放服务。无需注册，即开即用，支持多种设备访问。项目结合了前端技术和后端代理功能，可部署在支持服务端功能的各类网站托管服务上。**项目门户**： [libretv.is-an.org](https://libretv.is-an.org)
 
 本项目基于 [bestK/tv](https://github.com/bestK/tv) 进行重构与增强。
-
-<details>
-  <summary>点击查看项目截图</summary>
-  <img src="https://github.com/user-attachments/assets/df485345-e83b-4564-adf7-0680be92d3c7" alt="项目截图" style="max-width:600px">
-</details>
-
-## 🚀 快速部署
-
-选择以下任一平台，点击一键部署按钮，即可快速创建自己的 LibreTV 实例：
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLibreSpark%2FLibreTV)  
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LibreSpark/LibreTV)  
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/LibreSpark/LibreTV)
 
 ## 🚨 重要声明
 
@@ -47,17 +28,6 @@ Pull Bot 会反复触发无效的 PR 和垃圾邮件，严重干扰项目维护�
 
 ## 📋 详细部署指南
 
-### Cloudflare Pages
-
-1. Fork 或克隆本仓库到您的 GitHub 账户
-2. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)，进入 Pages 服务
-3. 点击"创建项目"，连接您的 GitHub 仓库
-4. 使用以下设置：
-   - 构建命令：留空（无需构建）
-   - 输出目录：留空（默认为根目录）
-5. **⚠️ 重要：在"设置" > "环境变量"中添加 `PASSWORD` 变量（必须设置）**
-6. 点击"保存并部署"
-
 ### Vercel
 
 1. Fork 或克隆本仓库到您的 GitHub/GitLab 账户
@@ -65,39 +35,6 @@ Pull Bot 会反复触发无效的 PR 和垃圾邮件，严重干扰项目维护�
 3. 导入您的仓库，使用默认设置
 4. **⚠️ 重要：在"Settings" > "Environment Variables"中添加 `PASSWORD` 变量（必须设置）**
 5. 点击"Deploy"
-
-
-### Docker
-```
-docker run -d \
-  --name libretv \
-  --restart unless-stopped \
-  -p 8899:8080 \
-  -e PASSWORD=your_password \
-  bestzwei/libretv:latest
-```
-
-### Docker Compose
-
-`docker-compose.yml` 文件：
-
-```yaml
-services:
-  libretv:
-    image: bestzwei/libretv:latest
-    container_name: libretv
-    ports:
-      - "8899:8080" # 将内部 8080 端口映射到主机的 8899 端口
-    environment:
-      - PASSWORD=${PASSWORD:-111111} # 可将 111111 修改为你想要的密码，默认为 your_password
-    restart: unless-stopped
-```
-启动 LibreTV：
-
-```bash
-docker compose up -d
-```
-访问 `http://localhost:8899` 即可使用。
 
 ### 本地开发环境
 
