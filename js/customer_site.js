@@ -1,15 +1,11 @@
 const CUSTOMER_SITES = {
     maotai: {
-        api: 'https://mtzy.me/api.php/provide/vod',
-        name: '茅台',
+        api: 'https://caiji.maotaizy.cc/api.php/provide/vod/from/mtm3u8/at/josn',
+        name: '茅台'
     },
     jisu: {
-        api: 'https://jszy333.com/api.php/provide/vod',
-        name: '极速',
-    },
-    jinyin: {
-        api: 'http://jinyingzy.com/api.php/provide/vod',
-        name: '金鹰',
+        api: 'https://jszyapi.com/api.php/provide/vod/from/jsm3u8/at/json',
+        name: '极速'
     }
 };
 

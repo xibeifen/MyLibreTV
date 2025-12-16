@@ -149,23 +149,16 @@ async function handleApiRequest(url) {
                 let episodes = [];
 
                 if (videoDetail.vod_play_url) {
-                    // 分割不同播放源
-                    const playSources = videoDetail.vod_play_url.split('$$$');
+                    const playSource = videoDetail.vod_play_url;
+                    if (playSource.includes('m3u8')) {
+                        const episodeList = playSource.split('#');
 
-                    // 判断播放源是否包含m3u8链接
-                    for (let playSource of playSources) {
-                        if (playSource.includes('m3u8')) {
-                            const episodeList = playSource.split('#');
-
-                            // 从每个集数中提取URL
-                            episodes = episodeList.map(ep => {
-                                const parts = ep.split('$');
-                                // 返回URL部分(通常是第二部分，如果有的话)
-                                return parts.length > 1 ? parts[1] : '';
-                            }).filter(url => url && (url.startsWith('http://') || url.startsWith('https://')));
-
-                            break;
-                        }
+                        // 从每个集数中提取URL
+                        episodes = episodeList.map(ep => {
+                            const parts = ep.split('$');
+                            // 返回URL部分(通常是第二部分，如果有的话)
+                            return parts.length > 1 ? parts[1] : '';
+                        }).filter(url => url && (url.startsWith('http://') || url.startsWith('https://')));
                     }
                 }
 
